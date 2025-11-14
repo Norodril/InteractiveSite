@@ -1,0 +1,88 @@
+/* Container for sliding animations */
+.transition-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Slide animation */
+.slide-enter {
+  animation: slide-in 0.7s ease forwards;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0%); }
+}
+
+.slide-exit {
+  animation: slide-out 0.7s ease forwards;
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Page 3 layout */
+.page3 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Page 3 background */
+.page3-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  z-index: -1;
+}
+
+/* Page 3 content */
+.page3-content {
+  top: 20px;
+  display: flex;
+  justify-content: flex-end; /* lower placement */
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page3-text2 {
+   position: absolute;       /* position relative to nearest positioned ancestor */
+   bottom: 400px !important;             /* distance from bottom of the page */
+   left: 50%;                /* center horizontally */
+   transform: translateX(-50%); /* truly center it */
+   font-size: 1.4rem !important;
+   color: white;
+   font-family: Arial, sans-serif;
+   text-align: center;
+   padding: 20px;
+   text-shadow: 4px 4px 10px black;
+   max-width: 70%;
+}
+
+/* Arrow Button */
+.arrow-instruction2 {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+  opacity: 0.9 !important;
+  cursor: pointer;
+  bottom: 20px;
+  animation: bounce 1s infinite ease-in-out alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
